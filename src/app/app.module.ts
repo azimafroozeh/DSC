@@ -16,7 +16,7 @@ import { AppRoutingModule } from './/app-routing.module';
 import { DashboardComponent } from './dashboard/dashboard.component'
 import { HttpClientModule }  from '@angular/common/http';
 import { CarSearchComponent } from './car-search/car-search.component';
-import { NavComponent } from './components/nav/nav/nav.component';
+import { NavComponent } from './components/nav/nav.component';
 import { HomeComponent } from './components/home/home.component';
 import { FooterComponent } from './components/footer/footer.component';
 import { CarComponent } from './components/car/car.component';

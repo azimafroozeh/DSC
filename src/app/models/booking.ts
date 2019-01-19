@@ -5,6 +5,6 @@ export class Booking {
   carId: string;
   price: number;
   description: string;
-  pickupDate: date;
-  dropoffDate: date;
+  pickupDate: Date;
+  dropoffDate: Date;
 }
