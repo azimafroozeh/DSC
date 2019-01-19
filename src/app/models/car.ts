@@ -1,4 +1,5 @@
 export class Car {
+  name: string;
   id: string;
   stationId: string;
   rent: number;

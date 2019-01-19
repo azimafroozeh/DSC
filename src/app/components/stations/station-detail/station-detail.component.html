@@ -1,3 +1,33 @@
-<p>
-  station-detail works!
-</p>
+<div *ngIf="station">
+  <h2>{{ station.name | uppercase }} Details</h2>
+  <div><span>id: </span>{{station.id}}</div>
+  <div>
+    <label>name:
+      <input [(ngModel)]="station.name" placeholder="name"/>
+    </label>
+  </div>
+  <button (click)="goBack()">go back</button>
+  <button (click)="save()">save</button>
+</div>
+
+<h2>Cars</h2>
+
+<div>
+  <label>Car name:
+    <input #carName />
+  </label>
+  <!-- (click) passes input value to add() and then clears the input -->
+  <button (click)="add(carName.value); carName.value=''">
+    add
+  </button>
+</div>
+sdgssdgsds
+<ul class="cars">
+  <li *ngFor="let car of cars">
+    <a routerLink="/cars/{{car.id}}">
+      <span class="badge">{{car.id}}</span> {{car.name}}
+    </a>
+    <button class="delete" title="delete car"
+    (click)="delete(car)">delete</button>
+  </li>
+</ul>

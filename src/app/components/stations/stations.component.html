@@ -1,3 +1,20 @@
-<p>
-  station works!
-</p>
+<h2>Stations</h2>
+
+<div>
+  <label>Station name:
+    <input #stationName />
+  </label>
+  <!-- (click) passes input value to add() and then clears the input -->
+  <button (click)="add(stationName.value); stationName.value=''">
+    add
+  </button>
+</div>
+<ul class="stations">
+  <li *ngFor="let station of stations">
+    <a routerLink="/stations/{{station.id}}">
+      <span class="badge">{{station.id}}</span> {{station.name}}
+    </a>
+    <button class="delete" title="delete station"
+    (click)="delete(station)">delete</button>
+  </li>
+</ul>
