@@ -1,3 +1,11 @@
-<p>
-  booking-detail works!
-</p>
+<div *ngIf="booking">
+  <h2>{{ booking.name | uppercase }} Details</h2>
+  <div><span>id: </span>{{booking.id}}</div>
+  <div>
+    <label>name:
+      <input [(ngModel)]="booking.name" placeholder="name"/>
+    </label>
+  </div>
+  <button (click)="goBack()">go back</button>
+  <button (click)="save()">save</button>
+</div>

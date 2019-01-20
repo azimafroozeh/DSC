@@ -7,4 +7,5 @@ export class Booking {
   description: string;
   pickupDate: Date;
   dropoffDate: Date;
+  name: string;
 }
