@@ -9,7 +9,7 @@ import { BookingService } from './services/booking.service';
 import { MessagesComponent } from './messages/messages.component';
 import { MessageService } from './services/message.service';
 import { AppRoutingModule } from './app-routing.module';
-import { DashboardComponent } from './dashboard/dashboard.component';
+import { DashboardComponent } from './components/dashboard/dashboard.component';
 import { HttpClientModule }  from '@angular/common/http';
 import { NavComponent } from './components/nav/nav.component';
 import { HomeComponent } from './components/home/home.component';
