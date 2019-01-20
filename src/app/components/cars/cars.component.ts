@@ -20,10 +20,10 @@ export class CarsComponent implements OnInit {
       .subscribe(cars => this.cars = cars);
   }
 
-  add(name: string): void {
-  name = name.trim();
-  if (!name) { return; }
-  this.carService.addCar({ name } as Car)
+  add(model: string): void {
+  model = model.trim();
+  if (!model) { return; }
+  this.carService.addCar({ model } as Car)
     .subscribe(car => {
       this.cars.push(car);
     });

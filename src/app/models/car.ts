@@ -1,5 +1,5 @@
 export class Car {
-  name: string;
+  //filed
   id: string;
   stationId: string;
   rent: number;
@@ -11,5 +11,11 @@ export class Car {
   year: number;
   gearBox: string;
   fuelType: string;
+
+  //constructor
+  constructor(stationId:string, model:string){
+    this.stationId = stationId;
+    this.model = model;
+  }
 
 }

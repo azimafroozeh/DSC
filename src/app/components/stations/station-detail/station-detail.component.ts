@@ -14,6 +14,7 @@ export class StationDetailComponent implements OnInit {
 
   @Input() station: Station;
   cars: Car[];
+  car: Car;
 
   constructor(
     private route: ActivatedRoute,
@@ -36,7 +37,9 @@ export class StationDetailComponent implements OnInit {
   add(name: string): void {
   name = name.trim();
   if (!name) { return; }
-  this.carService.addCar({ name } as Car)
+  const id = this.route.snapshot.paramMap.get('id');
+  this.car = new Car(id, name)
+  this.carService.addCar(this.car)
     .subscribe(car => {
       this.cars.push(car);
     });
