@@ -15,7 +15,7 @@ const httpOptions = {
 @Injectable()
 export class BookingService {
 
-  private bookingsUrl = 'http://127.0.0.1:4001/api/bookings';
+  private bookingsUrl = 'http://127.0.0.1:4001/api/Bookings';
 
 
   constructor(private http: HttpClient,
@@ -59,7 +59,7 @@ export class BookingService {
   addBooking (booking: Booking): Observable<Booking> {
   return this.http.post<Booking>(this.bookingsUrl, booking, httpOptions).pipe(
     tap((booking: Booking) => this.log(`added booking w/ id=${booking.id}`)),
-    catchError(this.handleError<Booking>('addBooking'))
+    catchError(this.handleError<Booking>('addBooking ' + 'stationId= ' + booking.stationId + ' carId= ' + booking.carId + ' customerId=' + booking.customerId))
   );}
 
 
