@@ -20,8 +20,14 @@ import { StationDetailComponent } from './components/stations/station-detail/sta
 import { BookingsComponent } from './components/bookings/bookings.component';
 import { BookingDetailComponent } from './components/bookings/booking-detail/booking-detail.component';
 import { SearchComponent } from './components/search/search.component';
-import { CitySearchComponent } from './components/search/city-search/city-search.component'
-
+import { CitySearchComponent } from './components/search/city-search/city-search.component';
+import { RegisterComponent } from './components/user/register/register.component'
+import { AuthService } from './services/auth.service';
+import { AuthorizationInterceptorService } from './services/authorization-interceptor.service';
+import { UnauthorizedInterceptorService } from './services/unauthorized-interceptor.service'
+import { LoginComponent } from './components/user/login/login.component';
+import { LogoutComponent } from './components/user/logout/logout.component';
+import { HTTP_INTERCEPTORS } from '@angular/common/http'
 @NgModule({
   declarations: [
     AppComponent,
@@ -38,7 +44,10 @@ import { CitySearchComponent } from './components/search/city-search/city-search
     BookingsComponent,
     BookingDetailComponent,
     SearchComponent,
-    CitySearchComponent
+    CitySearchComponent,
+    RegisterComponent,
+    LoginComponent,
+    LogoutComponent
   ],
   imports: [
     BrowserModule,
@@ -50,8 +59,17 @@ import { CitySearchComponent } from './components/search/city-search/city-search
     CarService,
     MessageService,
     StationService,
-    BookingService
-
+    BookingService,
+    AuthService,
+    AuthorizationInterceptorService,
+   { provide: HTTP_INTERCEPTORS,
+     useClass: AuthorizationInterceptorService,
+     multi: true
+   },
+   { provide: HTTP_INTERCEPTORS,
+     useClass: UnauthorizedInterceptorService,
+     multi: true
+   }
   ],
   bootstrap: [AppComponent]
 })

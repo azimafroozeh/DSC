@@ -7,6 +7,9 @@ import { StationsComponent } from './components/stations/stations.component';
 import { StationDetailComponent } from './components/stations/station-detail/station-detail.component';
 import { BookingsComponent } from './components/bookings/bookings.component';
 import { BookingDetailComponent } from './components/bookings/booking-detail/booking-detail.component';
+import { RegisterComponent } from './components/user/register/register.component'
+import { LoginComponent } from './components/user/login/login.component'
+import { LogoutComponent } from './components/user/logout/logout.component'
 
 const routes: Routes = [
   { path: 'cars/:id', component:  CarDetailComponent },
@@ -17,6 +20,10 @@ const routes: Routes = [
   { path: 'stations', component: StationsComponent},
   { path: 'bookings', component: BookingsComponent},
   { path: 'bookings/:id', component: BookingDetailComponent},
+  { path: 'register', component: RegisterComponent},
+  { path: 'login', component: LoginComponent},
+  { path: 'logout', component: LogoutComponent}
+
 
 ];
 
