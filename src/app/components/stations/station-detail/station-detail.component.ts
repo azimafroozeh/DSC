@@ -25,8 +25,8 @@ export class StationDetailComponent implements OnInit {
 
   ngOnInit() {
     this.getStation();
+    //setTimeout(() => {},500000);
     this.getCars();
-
   }
   getCars(): void {
     const id = this.route.snapshot.paramMap.get('id');

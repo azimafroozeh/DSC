@@ -69,7 +69,7 @@ export class StationService {
       // if not search term, return empty hero array.
       return of([]);
     }
-    return this.http.get<Station[]>(`http://127.0.0.1:4001/api/stations/?name=${term}`).pipe(
+    return this.http.get<Station[]>(`http://127.0.0.1:4001/api/stations?filter[where][name][like]=${term}`).pipe(
       tap(_ => this.log(`found stations matching "${term}"`)),
       catchError(this.handleError<Station[]>('searchStations', []))
     );

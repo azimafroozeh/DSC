@@ -27,7 +27,8 @@ import { AuthorizationInterceptorService } from './services/authorization-interc
 import { UnauthorizedInterceptorService } from './services/unauthorized-interceptor.service'
 import { LoginComponent } from './components/user/login/login.component';
 import { LogoutComponent } from './components/user/logout/logout.component';
-import { HTTP_INTERCEPTORS } from '@angular/common/http'
+import { HTTP_INTERCEPTORS } from '@angular/common/http';
+import { StationSearchComponent } from './components/stations/station-search/station-search.component'
 @NgModule({
   declarations: [
     AppComponent,
@@ -47,7 +48,8 @@ import { HTTP_INTERCEPTORS } from '@angular/common/http'
     CitySearchComponent,
     RegisterComponent,
     LoginComponent,
-    LogoutComponent
+    LogoutComponent,
+    StationSearchComponent
   ],
   imports: [
     BrowserModule,
